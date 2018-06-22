@@ -9,7 +9,8 @@ namespace CinemagiC.Services
         public HttpRequest()
         {
             string jsonString = string.Empty;
-            string url = @"https://api.themoviedb.org/3/movie/{movie_id}/lists?api_key=de2c61fd451b50de11cee234a5d8346b&language=en-US&page=1";
+            string url = @"https://api.themoviedb.org/3/movie/popular?api_key=de2c61fd451b50de11cee234a5d8346b&language=en-US&page=1"
+
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip;
