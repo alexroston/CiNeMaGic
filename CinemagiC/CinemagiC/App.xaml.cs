@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using CinemagiC.Views;
 using Xamarin.Forms.Xaml;
 
+// Adrian was here
+
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace CinemagiC
 {

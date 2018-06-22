@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CinemagiC\CinemagiC.csproj">
-      <Project>{E4445E26-1CA3-4F6C-A3B9-D0D1199A184B}</Project>
+      <Project>{E5D324A1-6C8F-4015-887F-789C8611ECF3}</Project>
       <Name>CinemagiC</Name>
     </ProjectReference>
   </ItemGroup>
