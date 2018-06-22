@@ -1,7 +1,7 @@
 ﻿using CinemagiC.Models;
 using Newtonsoft.Json;
 using System;
-
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,7 +23,8 @@ namespace CinemagiC.Views
                             }"; */
             string json = Services.HttpRequest.HttpRequester();
 
-            Movie m = JsonConvert.DeserializeObject<Movie>(json);
+            Movies movies = JsonConvert.DeserializeObject<Movies>(json);
+            //var movie = JsonConvert.DeserializeObject<IEnumerable<Movies>>(json);
         }
     }
 }

@@ -6,8 +6,8 @@ namespace CinemagiC.Models
 {
     class Movie
     {
-        public String title { get; set; }
-        public String id { get; set; }
-        public String name { get; set; }
+        public string title { get; set; }
+        public string id { get; set; }
+        public string name { get; set; }
     }
 }
