@@ -6,10 +6,14 @@ namespace CinemagiC.Services
 {
     public class HttpRequest
     {
-        public HttpRequest()
+
+        public static string HttpRequester(){
+            return HttpRequester(1);
+        }
+        public static string HttpRequester(int page)
         {
             string jsonString = string.Empty;
-            string url = @"https://api.themoviedb.org/3/movie/popular?api_key=de2c61fd451b50de11cee234a5d8346b&language=en-US&page=1"
+            string url = @"https://api.themoviedb.org/3/movie/popular?api_key=de2c61fd451b50de11cee234a5d8346b&language=en-US&page=" + Convert.ToString(page);
 
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -22,7 +26,9 @@ namespace CinemagiC.Services
                 jsonString = reader.ReadToEnd();
             }
 
-            Console.WriteLine(jsonString);
+            System.Diagnostics.Debug.WriteLine(jsonString);
+
+            return jsonString;
         }
     }
 }
