@@ -17,6 +17,8 @@ namespace CiNeMaGic
         protected override void OnStart()
         {
             // Handle when your app starts
+            // TODO: api request to movie database
+
         }
 
         protected override void OnSleep()
@@ -27,6 +29,7 @@ namespace CiNeMaGic
         protected override void OnResume()
         {
             // Handle when your app resumes
+            // TODO: api request again
         }
     }
 }
