@@ -7,7 +7,8 @@ namespace CinemagiC.Services
     public class HttpRequest
     {
 
-        public static string HttpRequester(){
+        public static string HttpRequester()
+        {
             return HttpRequester(1);
         }
         public static string HttpRequester(int page)
