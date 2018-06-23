@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CinemagiC.Models
 {
-    class Movie
+    public class Movie
     {
         [JsonProperty(PropertyName = "title")]
         public string Title { get; set; }

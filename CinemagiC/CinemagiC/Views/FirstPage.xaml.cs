@@ -33,5 +33,17 @@ namespace CinemagiC.Views
             };
             filmListView.ItemsSource = movies.results;
         }
+
+        private void ImageCell_Tapped(object sender, EventArgs e)
+        {
+            var tappedMovie = ((ImageCell)sender);
+            //Navigation.PushAsync(new FilmDetailPage(tappedMovie));
+        }
+
+        private void filmListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Movie tappedMovie = (Movie)e.Item;
+            Navigation.PushAsync(new FilmDetailPage(tappedMovie));
+        }
     }
 }
