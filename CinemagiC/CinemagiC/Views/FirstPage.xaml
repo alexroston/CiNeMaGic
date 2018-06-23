@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CinemagiC.Views.FirstPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Search" Activated="ToolbarItem_Activated"/>
+        <ToolbarItem Icon="searchicon.png" Activated="ToolbarItem_Activated"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView x:Name="filmListView" ItemTapped="filmListView_ItemTapped">
