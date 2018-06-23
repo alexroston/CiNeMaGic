@@ -4,17 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using CinemagiC.Models;
+using Newtonsoft.Json;
 
 [assembly: Xamarin.Forms.Dependency(typeof(CinemagiC.Services.MockDataStore))]
 namespace CinemagiC.Services
 {
     public class MockDataStore : IDataStore<Item>
     {
-        List<Item> items;
+        List<Item> items = new List<Item>();
+        List<Movie> movies = new List<Movie>();
 
         public MockDataStore()
         {
-            items = new List<Item>();
             var mockItems = new List<Item>
             {
                 new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
@@ -29,6 +30,10 @@ namespace CinemagiC.Services
             {
                 items.Add(item);
             }
+
+            string json = Services.HttpRequest.HttpRequester();
+
+            Movies movies = JsonConvert.DeserializeObject<Movies>(json);
         }
 
         public async Task<bool> AddItemAsync(Item item)
