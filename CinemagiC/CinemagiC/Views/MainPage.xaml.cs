@@ -21,9 +21,9 @@ namespace CinemagiC.Views
                                 'Comedy'
                               ]
                             }"; */
-            string json = Services.HttpRequest.HttpRequester();
+            //string json = Services.HttpRequest.HttpRequester();
 
-            Movies movies = JsonConvert.DeserializeObject<Movies>(json);
+            //Movies movies = JsonConvert.DeserializeObject<Movies>(json);
             //var movie = JsonConvert.DeserializeObject<IEnumerable<Movies>>(json);
         }
     }
