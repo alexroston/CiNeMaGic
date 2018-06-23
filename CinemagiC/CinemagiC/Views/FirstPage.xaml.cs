@@ -45,5 +45,10 @@ namespace CinemagiC.Views
             Movie tappedMovie = (Movie)e.Item;
             Navigation.PushAsync(new FilmDetailPage(tappedMovie));
         }
+
+        private void ToolbarItem_Activated(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SearchPage());
+        }
     }
 }
