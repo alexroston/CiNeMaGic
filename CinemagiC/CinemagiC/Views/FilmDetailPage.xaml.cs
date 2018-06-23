@@ -23,8 +23,11 @@ namespace CinemagiC.Views
         {
             InitializeComponent();
             this.tappedMovie = tappedMovie;
-            titleLabel.Text = tappedMovie.Title;
+            this.Title = tappedMovie.Title;
             descriptionLabel.Text = tappedMovie.Overview;
+            titleLabel.Text = tappedMovie.Title;
+            image.Source = tappedMovie.PosterPath;
+            rating.Text = tappedMovie.VoteAverage;
         }
     }
 }

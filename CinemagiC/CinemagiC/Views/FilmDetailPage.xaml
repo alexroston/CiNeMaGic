@@ -3,11 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CinemagiC.Views.FilmDetailPage">
     <ContentPage.Content>
-        <StackLayout>
+        <RelativeLayout>
+            <BoxView Color="LightBlue" x:Name="background"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=0}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}"/>
+            <RelativeLayout
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.05, Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45, Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}">
+                <Image x:Name="image"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0, Constant=0}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=0}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant=0}"/>
+                <StackLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0, Constant=0}"
+                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=0}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant=0}">
+                    <Label  x:Name="titleLabel" HorizontalOptions="Fill" FontSize="Large"  />
+                    <Label Text="Rating:" FontSize="Micro" />
+                    <Label  x:Name="rating" TextColor="DarkBlue" FontSize="40"/>
+                </StackLayout>
+            </RelativeLayout>
+            <ScrollView Margin="10" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.55, Constant=0}"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.45, Constant=0}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}">
+                <Label  x:Name="descriptionLabel"/>
+            </ScrollView>
+        </RelativeLayout>
+        <!--<StackLayout>
             <Label x:Name="titleLabel"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label x:Name="descriptionLabel"/>
-        </StackLayout>
+                   Text="Title" />
+            <StackLayout Orientation="Horizontal" >
+                <Image x:Name="image" />
+                <Label x:Name="rating"/>
+            </StackLayout>
+            <ScrollView BackgroundColor="Red" HeightRequest="100">
+                <Label x:Name="descriptionLabel"
+                   Text="Eine laaaaaaaaaaaange Beschreibung"/>
+            </ScrollView>
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>
