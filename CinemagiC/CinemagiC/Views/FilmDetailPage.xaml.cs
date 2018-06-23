@@ -17,19 +17,6 @@ namespace CinemagiC.Views
         public FilmDetailPage ()
 		{
 			InitializeComponent ();
-
-            var tapGestureRecognizer = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += (s, e) => {
-                Console.WriteLine("asdfsdf");
-                System.Diagnostics.Debug.WriteLine("dsgfd");
-                var player2 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-                player2.Load("dirty_synth.mp3");
-                player2.Play();
-            };
-            image.GestureRecognizers.Add(tapGestureRecognizer);
-            var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-            player.Load("dirty-synth.mp3");
-            player.Play();
         }
 
         public FilmDetailPage(Movie tappedMovie)
@@ -41,6 +28,18 @@ namespace CinemagiC.Views
             titleLabel.Text = tappedMovie.Title;
             image.Source = tappedMovie.PosterPath;
             rating.Text = tappedMovie.VoteAverage;
+
+
+
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += (s, e) => {
+                Console.WriteLine("asdfsdf");
+                System.Diagnostics.Debug.WriteLine("dsgfd");
+                //var player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+                //player.Load("dirty-synth.mp3");
+                //player.Play();
+            };
+            image.GestureRecognizers.Add(tapGestureRecognizer);
         }
     }
 }
