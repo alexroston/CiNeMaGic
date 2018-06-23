@@ -6,7 +6,7 @@
         <ListView x:Name="filmListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding title}" ImageSource="{Binding imagepath}"/>
+                    <ImageCell Text="{Binding Title}" ImageSource="{Binding PosterPath}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

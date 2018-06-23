@@ -1,4 +1,5 @@
 ﻿using CinemagiC.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,15 @@ namespace CinemagiC.Views
         {
             base.OnAppearing();
 
-            List<Movie> movies = new List<Movie>();
-            movies.Add(new Movie() { title = "Film1", imagepath = "https://image.tmdb.org/t/p/w200/ePyN2nX9t8SOl70eRW47Q29zUFO.jpg" });
-            filmListView.ItemsSource = movies;
+            string json = Services.HttpRequest.HttpRequester();
+            Movies movies = JsonConvert.DeserializeObject<Movies>(json);
+            //movies.Add(new Movie() { Title = "Film1", imagepath = "https://image.tmdb.org/t/p/w200/ePyN2nX9t8SOl70eRW47Q29zUFO.jpg" });
+            
+            foreach (var item in movies.results)
+            {
+                item.PosterPath = "https://image.tmdb.org/t/p/w200" + item.PosterPath;
+            };
+            filmListView.ItemsSource = movies.results;
         }
     }
 }
