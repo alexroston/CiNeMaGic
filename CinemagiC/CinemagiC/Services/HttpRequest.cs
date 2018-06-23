@@ -31,5 +31,25 @@ namespace CinemagiC.Services
 
             return jsonString;
         }
+
+        public static string HttpSearchRequester(String search)
+        {
+            string jsonString = string.Empty;
+            string url = @"https://api.themoviedb.org/3/search/movie?api_key=de2c61fd451b50de11cee234a5d8346b&language=en-US&query=" + Convert.ToString(search);
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.AutomaticDecompression = DecompressionMethods.GZip;
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                jsonString = reader.ReadToEnd();
+            }
+
+            System.Diagnostics.Debug.WriteLine(jsonString);
+
+            return jsonString;
+        }
     }
 }
